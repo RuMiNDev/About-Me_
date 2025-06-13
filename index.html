@@ -1,187 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta property="og:title" content="루민 - Just a Normal Student Dev">
-   <meta property="og:image" content="https://cdn.discordapp.com/avatars/1182847588320432148/162da060b17953d8575411f630b6c476.png?size=256">
-   <meta property="og:description" content="Hello, I'm RuMiNDev! Just a Normal Student Dev.">
-   <meta name="theme-color" content="#0079F2">
-   <meta name="description" content="Hello, I'm RuMiNDev! Just a Normal Student Dev.">
-   <title>Profile Page</title>
-   <link rel="shortcut icon" href="https://cdn.discordapp.com/avatars/1182847588320432148/162da060b17953d8575411f630b6c476.png?size=256">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-   <style>
-      body {
-         font-family: 'Roboto', sans-serif;
-         background-color: #121212;
-         color: #ffffff;
-         margin: 0;
-         padding: 20px;
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         justify-content: center;
-         height: 100vh;
-         text-align: center;
-      }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="루민 - Just a Normal Student Dev" />
+  <meta property="og:image" content="https://cdn.discordapp.com/avatars/1182847588320432148/162da060b17953d8575411f630b6c476.png?size=256" />
+  <meta property="og:description" content="Hello, I'm RuMiNDev! Just a Normal Student Dev." />
+  <meta name="theme-color" content="#0079F2" />
+  <meta name="description" content="Hello, I'm RuMiNDev! Just a Normal Student Dev." />
+  <title>Profile Page</title>
+  <link rel="shortcut icon" href="https://cdn.discordapp.com/avatars/1182847588320432148/162da060b17953d8575411f630b6c476.png?size=256" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
 
-      .card {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         width: 80%;
-         max-width: 600px;
-         padding: 20px;
-         background-color: #1e1e1e;
-         border-radius: 10px;
-         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-         transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
+    .card {
+      width: 90%;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-      .card:hover {
-         transform: translateY(-10px);
-         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-      }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
 
-      .logo-wrapper img {
-         width: 100px;
-         height: 100px;
-         border-radius: 50%;
-         transition: transform 0.5s ease;
-      }
+    .logo-wrapper img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      transition: transform 0.5s ease;
+    }
 
-      .logo-wrapper img:hover {
-         transform: rotate(360deg);
-      }
+    .logo-wrapper img:hover {
+      transform: rotate(360deg);
+    }
 
-      .text h1 {
-         color: inherit;
-         text-decoration: none;
-      }
+    .text h1 {
+      margin: 10px 0;
+    }
 
-      .text p {
-         font-size: 1.2em;
-         margin-bottom: 10px;
-      }
+    .text p, .text li, .text h2 {
+      margin: 10px 0;
+    }
 
+    .text ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    .text ul li::before {
+      content: "• ";
+      color: #0079F2;
+      margin-right: 5px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    a:hover {
+      color: #0079F2;
+      transform: scale(1.05);
+    }
+
+    .email {
+      font-size: 1em;
+      word-break: break-word;
+    }
+
+    @keyframes growShrink {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    #profile-pic.clicked {
+      animation: growShrink 0.7s ease;
+    }
+
+    .roblox-logo {
+      height: 22px;
+      width: 22px;
+      margin-right: 5px;
+      vertical-align: middle;
+      filter: invert(1);
+    }
+
+    .social-media a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    @media (max-width: 600px) {
       .text h2 {
-         font-size: 1.8em;
-         margin: 20px 0 10px;
+        font-size: 1.5em;
       }
-
-      .text ul {
-         list-style-type: none;
-         padding: 0;
+      .text p, .text li {
+        font-size: 1em;
       }
-
-      .text ul li {
-         font-size: 1.2em;
-         margin: 5px 0;
-         position: relative;
-      }
-
-      .text ul li::before {
-         position: absolute;
-         left: 0;
-         color: #0079F2;
-         font-size: 1.5em;
-      }
-
-      a {
-         color: inherit;
-         text-decoration: none;
-         transition: transform 0.3s ease, color 0.3s ease;
-      }
-
-      a:hover {
-         transform: scale(1.1);
-         color: #0079F2;
-      }
-
-      .email {
-         font-size: 1em;
-         margin-top: 20px;
-      }
-
-      @keyframes growShrink {
-         0% { transform: scale(1); }
-         50% { transform: scale(1.2); }
-         100% { transform: scale(1); }
-      }
-
-      #profile-pic.clicked {
-         animation: growShrink 0.7s ease;
-      }
-
-      /* 로블록스 로고 스타일 */
-      .roblox-logo {
-         height: 20px;
-         margin-right: 5px;
-         vertical-align: middle;
-         filter: invert(1);
-      }
-   </style>
+    }
+  </style>
 </head>
 <body>
-   <div class="card">
-      <div class="logo-wrapper">
-         <img id="profile-pic" src="https://cdn.discordapp.com/avatars/1182847588320432148/162da060b17953d8575411f630b6c476.png?size=256" alt="Profile Picture">
-      </div>
-      <div class="text">
-         <h1><a href="1182847588320432148" target="_blank">RuMiNDev</a></h1>
-         <p><a href="https://time.is/KST" target="_blank">Time: KoreaStandardTime(KST)</a></p>
-         <h2>About Me</h2>
-         <ul>
-            <li>Just a Normal Student Dev</li>
-            <li>Skills: Python, SQL, LuaU</li>
-         </ul>
-         <h2>Contacts</h2>
-         <ul>
-            <li>Email: <a href="mailto:rumindev@gmail.com" class="email">rumindev@gmail.com</a></li>
-            <li>Discord: 7rd0</li>
-         </ul>
-         <h2>Servers</h2>
-         <ul>
-            <li>RK7 RCL@Owner</li>
-            <li>Sneaky@Leader</li>
-         </ul>
-         <h2>Social Media</h2>
-         <ul class="social-media">
-            <li><a href="https://github.com/rumindev" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-            <li>
-               <a href="https://www.roblox.com/users/7698166173/profile" target="_blank">
-                  <img class="roblox-logo" src="https://i.ibb.co/XrtWrK1d/1000002623-removebg-preview.png" alt="Roblox Logo">
-                  Roblox
-               </a>
-            </li>
-         </ul>
-      </div>
-   </div>
+  <div class="card">
+    <div class="logo-wrapper">
+      <img id="profile-pic" src="https://cdn.discordapp.com/avatars/1182847588320432148/162da060b17953d8575411f630b6c476.png?size=256" alt="Profile Picture" />
+    </div>
+    <div class="text">
+      <h1><a href="#">RuMiNDev</a></h1>
+      <p><a href="https://time.is/KST" target="_blank">Time: Korea Standard Time (KST)</a></p>
 
-   <script>
-      let clickCount = 0;
-      const profilePic = document.getElementById('profile-pic');
-      profilePic.addEventListener('click', function() {
-         clickCount++;
-         profilePic.classList.add('clicked');
-         setTimeout(() => profilePic.classList.remove('clicked'), 500);
-         const Messages = [
-            "ㅋㅋ",
-            "멋져요!",
-            "와! 지려요",
-            "아직도 누르고계신가요?",
-            "클릭 마스터네요ㅋ",
-            "그는 매우 프로인.",
-            "와. 샌즈",
-            "fire 🔥"
-         ];
-         if (clickCount % 10 === 0) {
-            const message = Messages[Math.floor(Math.random() * Messages.length)];
-            alert(`${clickCount} 번 눌렀네요. ${message}`);
-         }
-      });
-   </script>
+      <h2>About Me</h2>
+      <ul>
+        <li>Just a Normal Student Dev</li>
+        <li>Skills: Python, SQL, LuaU</li>
+      </ul>
+
+      <h2>Contacts</h2>
+      <ul>
+        <li>Email: <a href="mailto:rumindev@gmail.com" class="email">rumindev@gmail.com</a></li>
+        <li>Discord: 7rd0</li>
+      </ul>
+
+      <h2>Servers</h2>
+      <ul>
+        <li>RK7 RCL@Owner</li>
+        <li>Sneaky@Leader</li>
+      </ul>
+
+      <h2>Social Media</h2>
+      <ul class="social-media">
+        <li>
+          <a href="https://github.com/rumindev" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </li>
+        <li>
+          <a href="https://www.roblox.com/users/7698166173/profile" target="_blank">
+            <img class="roblox-logo" src="https://i.ibb.co/XrtWrK1d/1000002623-removebg-preview.png" alt="Roblox Logo" />
+            Roblox
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    let clickCount = 0;
+    const profilePic = document.getElementById('profile-pic');
+    profilePic.addEventListener('click', function () {
+      clickCount++;
+      profilePic.classList.add('clicked');
+      setTimeout(() => profilePic.classList.remove('clicked'), 500);
+      const Messages = [
+        "ㅋㅋ",
+        "멋져요!",
+        "와! 지려요",
+        "아직도 누르고계신가요?",
+        "클릭 마스터네요ㅋ",
+        "그는 매우 프로인.",
+        "와. 샌즈",
+        "fire 🔥"
+      ];
+      if (clickCount % 10 === 0) {
+        const message = Messages[Math.floor(Math.random() * Messages.length)];
+        alert(`${clickCount} 번 눌렀네요. ${message}`);
+      }
+    });
+  </script>
 </body>
 </html>
